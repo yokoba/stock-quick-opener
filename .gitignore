@@ -1,0 +1,24 @@
+# VSCode settings
+.vscode/
+
+# Node modules
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build output
+dist/
+build/
+
+# 念のため拡張の一時ファイル
+*.zip
+*.sha256
+
+# VSCode launch config（個人環境用なのでGit管理しない）
+.vscode/launch.json
+.github/copilot-instructions.md

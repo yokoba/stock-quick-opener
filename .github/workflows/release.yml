@@ -1,0 +1,49 @@
+name: Build and Release Extension
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # バージョンタグ（例: v1.0.0）をプッシュしたときに動く
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set version from tag
+        run: |
+          echo "RELEASE_TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      - name: Prepare zip name
+        run: |
+          ZIP_NAME="stock-quick-opener-${RELEASE_TAG}.zip"
+          echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
+
+      - name: Create zip of extension
+        run: |
+          zip -r "$ZIP_NAME" manifest.json background.js content_script.js popup.html popup.js options.html options.js LICENSE
+
+      - name: Compute SHA256 checksum
+        run: |
+          sha256sum "$ZIP_NAME" | awk '{print $1}' > "${ZIP_NAME}.sha256"
+
+      - name: List artifacts
+        run: ls -al
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.RELEASE_TAG }}
+          name: ${{ env.RELEASE_TAG }}
+          draft: false
+          prerelease: false
+          files: |
+            ${{ env.ZIP_NAME }}
+            ${{ env.ZIP_NAME }}.sha256
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

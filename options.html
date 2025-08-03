@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<body>
+  <h3>テンプレート一覧</h3>
+  <div id="list"></div>
+  <button id="add">追加</button>
+  <button id="save">保存</button>
+
+  <template id="row">
+    <div class="row">
+      <input type="checkbox" class="enabled" checked>
+      <input type="text" class="name" placeholder="サイト名">
+      <input type="text" class="tpl" size="60" placeholder="https://example.com?c={TICKER}">
+      <button class="del">×</button>
+    </div>
+  </template>
+
+  <script src="options.js"></script>
+</body>
+
+</html>

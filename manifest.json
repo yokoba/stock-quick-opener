@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Stock Quick Opener",
+  "description": "Yahoo Finance の銘柄ページからコードを取得し、チェック済みサイトを一括で開く Chrome 拡張",
+  "version": "1.0.0",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "開く"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://finance.yahoo.com/quote/*",
+        "https://finance.yahoo.co.jp/quote/*"
+      ],
+      "js": [
+        "content_script.js"
+      ]
+    }
+  ],
+  "options_page": "options.html"
+}

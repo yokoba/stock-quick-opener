@@ -23,8 +23,8 @@ stock-quick-opener/
 ```
 
 ## インストール方法
-1. Releaseからzipをダウンロードし、SHA256で検証
-2. zipを展開し、chrome://extensions で「パッケージ化されていない拡張機能を読み込む」から展開フォルダを指定
+
+詳細なインストール手順については [INSTALL.md](INSTALL.md) をご参照ください。
 
 ## 使い方
 1. Yahoo!ファイナンスの銘柄ページ（例: https://finance.yahoo.co.jp/quote/6920.T）を開く

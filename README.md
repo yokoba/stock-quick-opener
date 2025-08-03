@@ -71,5 +71,5 @@ stock-quick-opener/
 - コード・テンプレート構成は最小限・シンプルを維持
 - 外部通信・トラッキング・不要なファイルは一切なし
 
----
-MIT License
+## ライセンス
+[MIT License](LICENSE)

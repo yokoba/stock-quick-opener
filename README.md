@@ -72,4 +72,5 @@ stock-quick-opener/
 - 外部通信・トラッキング・不要なファイルは一切なし
 
 ## ライセンス
-[MIT License](LICENSE)
+
+このプロジェクトは [MIT License](LICENSE) の下で公開されています。

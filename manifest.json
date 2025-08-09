@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Stock Quick Opener",
   "description": "Yahoo Finance の銘柄ページからコードを取得し、チェック済みサイトを一括で開く Chrome 拡張",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "permissions": [
     "activeTab",
     "storage"
